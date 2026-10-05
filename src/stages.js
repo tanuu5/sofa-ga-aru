@@ -1,6 +1,6 @@
 // 4 つの場所の設定
 export const STAGES = {
-  // 黄色い部屋（いわゆる Level 0）
+  // 黄色い部屋
   1: {
     world: {
       type: 'maze',

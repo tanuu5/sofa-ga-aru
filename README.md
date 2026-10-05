@@ -121,7 +121,7 @@ docs/screenshots/  README の画像
 - コード：MIT License（[LICENSE](LICENSE)）© 2026 たぬ
 - 3D 描画：[three.js](https://threejs.org/) r186（MIT License。`vendor/three/` に同梱、ライセンスは [vendor/three/LICENSE](vendor/three/LICENSE)）
 - フォント：[Shippori Mincho](https://fonts.google.com/specimen/Shippori+Mincho)（Google Fonts から読み込み、SIL Open Font License）
-- 「The Backrooms」と呼ばれるネット上の創作から着想を得た、オリジナルの作品です。既存の画像・映像・文章は使っていません。
+- 「The Backrooms」と呼ばれるネット上の創作から着想を得た、オリジナルの作品です。既存の画像・映像・文章・設定は使っていません。非公式の作品で、各 Wiki、Kane Parsons の映像シリーズ、A24 の映画とは関係ありません。
 - ゲームパッドのボタン表示は、ボタンの配置を示す記号を単色の線で描いたものです。特定の製品の名称やロゴは使っていません。
 - MIT License の対象はこのリポジトリのコードと文章です。「Claude」の名前や商標の使用を許諾するものではありません。
 
@@ -137,7 +137,7 @@ Endless yellow rooms, and a single sofa. A short Backrooms-style walk made with 
 - Four places, one sofa, about ten minutes. Headphones recommended.
 - 576 fluorescent panels per place, with wall-occluded lighting computed in the browser, so every light can flicker or die on its own.
 - No image or audio files: the textures, the sofa, the hum, the footsteps and the distant lounge music are all generated in code.
-- Inspired by the Backrooms internet folklore; everything here is original.
+- Inspired by the Backrooms internet folklore; everything here is original. This is an unofficial work, not affiliated with any Backrooms wiki, Kane Parsons' series, or the A24 film.
 
 Controls: `WASD` walk · mouse look · `E` / click sit and stand · `Esc` pause. Gamepads work too (button icons switch automatically; pick type1 or type2 in the pause menu), and so does touch.
 
