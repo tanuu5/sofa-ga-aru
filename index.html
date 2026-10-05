@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <title>ソファーがある。</title>
+    <meta name="description" content="黄色い部屋がどこまでも続いている。ソファーが、ぽつんとある。ブラウザで歩くインタラクティブ作品。" />
+    <meta name="theme-color" content="#0b0a07" />
+    <meta property="og:title" content="ソファーがある。" />
+    <meta property="og:description" content="黄色い部屋がどこまでも続いている。ソファーが、ぽつんとある。" />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c9b25c'/%3E%3Cpath d='M8 12.5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2V17H8z' fill='%237b3f3c'/%3E%3Crect x='4.5' y='14' width='4.5' height='9' rx='2' fill='%237b3f3c'/%3E%3Crect x='23' y='14' width='4.5' height='9' rx='2' fill='%237b3f3c'/%3E%3Crect x='8.5' y='17' width='15' height='5' rx='1.5' fill='%238f4b47'/%3E%3Crect x='6' y='23' width='2' height='3' fill='%232e1e14'/%3E%3Crect x='24' y='23' width='2' height='3' fill='%232e1e14'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three/build/three.module.js",
+          "three/addons/": "./vendor/three/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+
+    <div id="hud">
+      <div id="reticle"></div>
+      <div id="prompt"><span id="prompt-key" class="key">E</span><span id="prompt-label">座る</span></div>
+      <div id="caption"></div>
+      <div id="hint"></div>
+    </div>
+
+    <div id="title" class="overlay">
+      <div class="title-inner">
+        <h1 id="t-title">ソファーがある。</h1>
+        <p id="t-sub" class="sub">there is a sofa.</p>
+        <p id="t-welcome" class="welcome" hidden>おかえりなさい。</p>
+        <button id="start" class="start" type="button" data-nav>クリックしてはじめる</button>
+        <p id="t-note" class="note">ヘッドホン推奨</p>
+        <p id="t-controls" class="controls"></p>
+      </div>
+    </div>
+
+    <div id="pause" class="overlay">
+      <div class="panel">
+        <h2 id="p-title">一時停止</h2>
+        <p id="p-resume" class="resume">クリックで戻る</p>
+        <div class="panel-controls">
+          <button id="resumeBtn" type="button" class="ghost" data-nav>つづける</button>
+          <label data-nav="range"><span id="l-volume">音量</span><input id="volume" type="range" min="0" max="1" step="0.01" /></label>
+          <label data-nav="range"><span id="l-sens">視点の感度</span><input id="sens" type="range" min="0.3" max="2.5" step="0.05" /></label>
+          <label class="check" data-nav="check"><input id="bob" type="checkbox" /><span id="l-bob">歩くときの揺れ</span></label>
+          <label class="check" data-nav="check"><input id="invert" type="checkbox" /><span id="l-invert">視点の上下反転</span></label>
+          <label class="check" data-nav="check"><input id="rumble" type="checkbox" /><span id="l-rumble">振動</span></label>
+          <div class="seg" id="padtype" data-nav="seg">
+            <span id="l-padtype">ボタン表示</span>
+            <div class="seg-opts" role="radiogroup">
+              <button type="button" id="pt-auto" data-v="auto" role="radio">自動</button>
+              <button type="button" data-v="type1" role="radio">type1</button>
+              <button type="button" data-v="type2" role="radio">type2</button>
+            </div>
+          </div>
+          <button id="restart" type="button" class="ghost" data-nav>最初から</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="ending" class="overlay">
+      <div class="ending-inner">
+        <p id="e-title" class="e-title">ソファーがある。</p>
+        <p id="e-sub" class="e-sub">おしまい</p>
+        <p id="e-credit" class="e-credit"></p>
+        <div class="e-buttons">
+          <button id="stay" type="button" class="ghost" data-nav>ここにいる</button>
+          <button id="again" type="button" class="ghost" data-nav>もう一度</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="touch" hidden>
+      <div id="joy"><div id="knob"></div></div>
+      <button id="act" type="button">座る</button>
+      <button id="pauseBtn" type="button" aria-label="pause">Ⅱ</button>
+    </div>
+
+    <div id="audio-notice">クリックすると音が鳴ります</div>
+
+    <div id="loading" class="show"><p id="loading-text">準備しています…</p></div>
+
+    <noscript><p class="noscript">JavaScript を有効にしてください。</p></noscript>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
